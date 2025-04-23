@@ -6,7 +6,7 @@ df = pd.read_csv("processed_titanic.csv")
 print(df.head())
 print(df.dtypes, '\n')
 df.drop(columns=['Name', 'PassengerId'], inplace=True) #, 'Cabin'
-git add main.py
+
 
 print(df.dtypes)
 
