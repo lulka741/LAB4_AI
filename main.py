@@ -1,13 +1,16 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
+#df = pd.read_csv("processed_titanic1.csv")
 df = pd.read_csv("processed_titanic.csv")
 print(df.head())
 print(df.dtypes, '\n')
-df.drop(columns=["Name"], inplace=True)
+df.drop(columns=['Name', 'PassengerId'], inplace=True) #, 'Cabin'
+git add main.py
+
 print(df.dtypes)
 
-X = df.drop("Survived", axis=1)
+X = df.drop("Survived", axis=1) #Transported Survived
 y = df["Survived"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
